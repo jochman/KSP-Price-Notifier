@@ -2,22 +2,25 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import argparse
 
+def build_options():
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument('--log-level=3')
 
-def is_price_lower_than_target(uin: int, target_price: int, chrome_driver: str):
-    driver = webdriver.Chrome(chrome_driver)
-    price: int
-    url = f"https://ksp.co.il/?uin={uin}"
+def get_price(url: str, chrome_driver: str) -> int:
+
+    driver = webdriver.Chrome(chrome_driver, options=build_options())
     driver.get(url)
     content = driver.page_source
     soup = BeautifulSoup(content, features="html.parser")
     items = soup.find_all('span', {'class': 'span-new-price-get-item'})
     for item in items:
         price = item.text[:-2].replace(',', '')
-    if int(price) <= target_price:
-        print(f"The price is lower than the target price, it is now {price}")
-        print(f"Go and buy! {url}")
+        return int(price)
     else:
-        print("The price is higher than target price.")
+        raise KeyError('Could not find price or the product')
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -27,4 +30,10 @@ if __name__ == "__main__":
     parser.add_argument('target_price', type=int, help="Target price. if the price is below, will let you know.")
     parser.add_argument('--chromedriver', help="Path to the chromedriver")
     args = parser.parse_args()
-    is_price_lower_than_target(args.uin, args.target_price, args.chromedriver)
+    url = url = f"https://ksp.co.il/?uin={args.uin}"
+    price = get_price(url, args.chromedriver)
+    if int(price) <= args.target_price:
+        print(f"The price is lower than the target price, it is now {price}")
+        print(f"Go and buy! {url}")
+    else:
+        print("The price is higher than target price.")
