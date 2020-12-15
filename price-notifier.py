@@ -8,9 +8,9 @@ def build_options():
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--log-level=3')
+    return chrome_options
 
 def get_price(url: str, chrome_driver: str) -> int:
-
     driver = webdriver.Chrome(chrome_driver, options=build_options())
     driver.get(url)
     content = driver.page_source
