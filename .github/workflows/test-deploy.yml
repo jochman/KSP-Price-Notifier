@@ -1,9 +1,8 @@
-name: Test Deploy
+name: TestPyPi Deploy
 
 on:
   push:
-    tags:
-      - v**
+    branches: [main]
 
 jobs:
   deploy:
@@ -13,4 +12,6 @@ jobs:
       - name: Build and publish to pypi
         uses: JRubics/poetry-publish@v1.10
         with:
-          pypi_token: ${{ secrets.PYPI_TOKEN }}
+          pypi_token: ${{ secrets.TEST_PYPI_TOKEN }}
+          repository_name: "testpypi"
+          repository_url: "https://test.pypi.org/legacy/"
