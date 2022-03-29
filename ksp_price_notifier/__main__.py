@@ -2,7 +2,7 @@ from functools import partial
 
 import typer
 
-from . import GetPriceFromKSP
+from . import KSP
 
 
 def main(
@@ -15,8 +15,8 @@ def main(
         help='Target price. if the price is below, will let you know'
     ),
 ):
-    getter = GetPriceFromKSP()
-    price = getter.get_price_from_ksp(uin)
+    getter = KSP()
+    price = getter.get_price(uin)
     if int(price) <= target_price:
         print(f"The price is lower than the target price, it is now {price}")
         print(f"Go and buy! https://ksp.co.il/web/item/{uin}")
