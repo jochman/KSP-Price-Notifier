@@ -2,7 +2,19 @@
 name = "ksp-price-notifier"
 version = "0.1.0"
 description = ""
-authors = ["Bar Hochman <bhochman@paloaltonetworks.com>"]
+authors = ["Bar Hochman <@jochman>"]
+homepage = "https://github.com/jochman/KSP-Price-Notifier"
+repository = "https://github.com/jochman/KSP-Price-Notifier"
+license = "MIT"
+include = [
+    "LICENSE",
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10"
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
