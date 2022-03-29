@@ -4,7 +4,8 @@ Use to get notified for change of price in KSP.
 
 ## Usage
 
-just give it the uin (can be found the link, as https://ksp.co.il/?uin=109332). target price the the path to chromedriver:
+just give it the uin (can be found the link, as <https://ksp.co.il/?uin=109332>).
+target price the the path to chromedriver:
 
 ```shell
 python price-notifier.py 109332 5990

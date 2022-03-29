@@ -31,3 +31,7 @@ repos:
             types-requests==2.25,
             types-setuptools,
             ]
+-   repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 2.1.6
+    hooks:
+    -   id: markdownlint
