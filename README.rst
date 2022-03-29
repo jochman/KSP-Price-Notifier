@@ -2,13 +2,12 @@
 
 Use to get notified for change of price in KSP.
 
-You must have [chromedriver](https://chromedriver.chromium.org/).
+## Usage
 
-Usage:
 just give it the uin (can be found the link, as <https://ksp.co.il/?uin=109332>). target price the the path to chromedriver:
 
 ```shell
-python price-notifier.py 109332 5990 --chromedriver E:\dev\chromedriver.exe
+python price-notifier.py 109332 5990
 ```
 
 result:
