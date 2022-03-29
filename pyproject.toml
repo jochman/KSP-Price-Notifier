@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ksp-price-notifier"
-version = "0.1.2"
+version = "0.1.3"
 description = ""
 authors = ["Jochman"]
 homepage = "https://github.com/jochman/KSP-Price-Notifier"
@@ -15,7 +15,7 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10"
 ]
-readme = "README.rst"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.8"
