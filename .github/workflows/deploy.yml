@@ -6,13 +6,9 @@ on:
       - v*.**
 
 jobs:
-  tests:
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Run tests
-        uses: jochman/KSP-Price-Notifier/.github/workflows/push.yml@main
   deploy:
     runs-on: ubuntu-18.04
+    uses: jochman/KSP-Price-Notifier/.github/workflows/push.yml@main
     steps:
       - uses: actions/checkout@v2
       - name: Build and publish to pypi
