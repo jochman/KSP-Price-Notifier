@@ -4,7 +4,8 @@ on:
   push:
     tags:
       - v*.**
-
+    branches:
+      - workflow_call
 jobs:
   tests:
     uses: jochman/KSP-Price-Notifier/.github/workflows/push.yml@main
@@ -16,4 +17,4 @@ jobs:
       - name: Build and publish to pypi
         uses: JRubics/poetry-publish@v1.10
         with:
-          pypi_token: ${{ secrets.PYPI_TOKEN }}
+          pypi_token: ${{ secrets.PYsPI_TOKEN }}
