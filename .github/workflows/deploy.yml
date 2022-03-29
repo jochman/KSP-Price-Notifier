@@ -9,7 +9,6 @@ on:
 jobs:
   tests:
     uses: jochman/KSP-Price-Notifier/.github/workflows/push.yml@workflow-call
-    runs-on: ubuntu-18.04
   deploy:
     runs-on: ubuntu-18.04
     steps:
