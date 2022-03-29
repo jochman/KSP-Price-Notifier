@@ -1,13 +1,17 @@
 import typer
 
-from .get_price import GetPriceFromKSP
+from . import GetPriceFromKSP
 
 
 def main(
-    uin: int = typer.Argument(...,
-                              help='The uin of the product, can be found in the url.'),
+    uin: int = typer.Argument(
+        ...,
+        help='The uin of the product, can be found in the url.'
+    ),
     target_price: int = typer.Argument(
-        ..., help='Target price. if the price is below, will let you know'),
+        ...,
+        help='Target price. if the price is below, will let you know'
+    ),
 ):
     getter = GetPriceFromKSP()
     price = getter.get_price_from_ksp(uin)

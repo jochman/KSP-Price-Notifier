@@ -1,1 +1,1 @@
-from .get_price import GetPriceFromKSP
+from .get_price import GetPriceFromKSP as GetPriceFromKSP  # noqa: F401

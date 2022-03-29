@@ -3,8 +3,8 @@ import requests
 
 class GetPriceFromKSP:
     def __init__(
-        self, 
-        url='https://ksp.co.il/m_action/api/item/', 
+        self,
+        url='https://ksp.co.il/m_action/api/item/',
         provider=requests
     ) -> None:
         self._provider = provider
