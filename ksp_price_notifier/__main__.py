@@ -1,3 +1,5 @@
+from functools import partial
+
 import typer
 
 from . import GetPriceFromKSP
@@ -21,6 +23,8 @@ def main(
     else:
         print("The price is higher than target price.")
 
+
+app = partial(typer.run, main)
 
 if __name__ == "__main__":
     typer.run(main)

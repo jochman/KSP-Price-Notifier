@@ -17,6 +17,9 @@ classifiers = [
 ]
 readme = "README.md"
 
+[tool.poetry.scripts]
+ksp-price-notifier = 'ksp_price_notifier.__main__:app'
+
 [tool.poetry.dependencies]
 python = "^3.8"
 typer = "^0.4.0"

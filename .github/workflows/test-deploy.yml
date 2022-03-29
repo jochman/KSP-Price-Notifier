@@ -1,4 +1,4 @@
-name: TestPyPi Deploy
+name: Test Deploy
 
 on:
   push:
