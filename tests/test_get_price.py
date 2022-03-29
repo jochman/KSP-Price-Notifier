@@ -1,7 +1,8 @@
 from collections import namedtuple
 
+provider = namedtuple('requests', ['get', lambda x: {
+                      'result': {'data': {'price': 670}}}])
 
-provider = namedtuple('requests', ['get', lambda x: {'result': {'data': {'price': 670}}}])
 
 def test_find_price():
     from ksp_price_notifier import GetPriceFromKSP
