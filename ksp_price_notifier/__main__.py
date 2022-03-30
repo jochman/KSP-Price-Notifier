@@ -15,6 +15,9 @@ def main(
         help='Target price. if the price is below, will let you know'
     ),
 ):
+    """Give the UIN of the product and a threshold price, get back if the
+    current price is lower than the threshold.
+    """
     getter = KSP()
     price = getter.get_price(uin)
     if int(price) <= target_price:

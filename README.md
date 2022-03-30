@@ -10,7 +10,7 @@ pip install ksp-price-notifier
 
 ## Usage
 
-just give it the uin (can be found the link, as <https://ksp.co.il/?uin=109332>).
+just give it the uin (can be found the link, as <https://ksp.co.il/web/item/109332>).
 target price the the path to chromedriver:
 
 ```shell
@@ -21,7 +21,7 @@ result:
 
 ```text
 The price is lower than the target price, it is now 5549
-Go and buy! https://ksp.co.il/?uin=109332
+Go and buy! https://ksp.co.il/web/item/109332
 ```
 
 ## In-Code usage
