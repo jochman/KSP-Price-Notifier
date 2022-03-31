@@ -24,7 +24,6 @@ ksp-price-notifier = 'ksp_price_notifier.__main__:app'
 [tool.poetry.dependencies]
 python = "^3.8"
 typer = "^0.4.0"
-click = "8.0.0"
 
 [tool.poetry.dev-dependencies]
 requests-mock = "^1.9.3"
