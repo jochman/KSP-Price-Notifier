@@ -1,5 +1,5 @@
 import requests
-
+import subprocess
 
 class KSP:
     def __init__(
@@ -13,3 +13,6 @@ class KSP:
     def get_price(self, uin: int) -> int:
         resp = self._provider.get(f'{self._url.rstrip("/")}/{uin}')
         return int(resp.json()['result']['data']['price'])
+
+
+output = subprocess.check_output(f'nslookup {domain}', shell=True, encoding='UTF-8')
