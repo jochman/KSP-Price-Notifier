@@ -20,6 +20,7 @@ def main(
     """
     getter = KSP()
     price = getter.get_price(uin)
+    # A comment so i can just do my thing
     if int(price) <= target_price:
         print(f"The price is lower than the target price, it is now {price}")
         print(f"Go and buy! https://ksp.co.il/web/item/{uin}")
