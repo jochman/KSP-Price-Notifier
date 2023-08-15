@@ -2,17 +2,18 @@ from pathlib import Path
 
 import pytest
 from pytest_localserver.http import WSGIServer
-from selenium.webdriver import Edge
-from selenium.webdriver.edge.service import Service
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 from ksp_price_notifier import KSP
 
 
 @pytest.fixture(scope="module")
 def provider():
-    webdriver = EdgeChromiumDriverManager().install()
-    return Edge(service=Service(webdriver))
+    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    return driver
 
 
 @pytest.fixture()
