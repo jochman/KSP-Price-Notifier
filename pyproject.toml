@@ -2,19 +2,16 @@
 name = "ksp-price-notifier"
 version = "0.1.6"
 description = ""
-authors = ["Jochman"]
+authors = ["Jochman <ilnest.bar@gmail.com>"]
 homepage = "https://github.com/jochman/KSP-Price-Notifier"
 repository = "https://github.com/jochman/KSP-Price-Notifier"
 license = "MIT"
-include = [
-    "LICENSE",
-    "CHANGELOG.md"
-]
+include = ["LICENSE", "CHANGELOG.md"]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10"
+    "Programming Language :: Python :: 3.10",
 ]
 readme = "README.md"
 
@@ -24,6 +21,7 @@ ksp-price-notifier = 'ksp_price_notifier.__main__:app'
 [tool.poetry.dependencies]
 python = "^3.8"
 typer = "^0.4.0"
+requests = "^2.31.0"
 
 [tool.poetry.dev-dependencies]
 requests-mock = "^1.9.3"
