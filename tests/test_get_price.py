@@ -5,13 +5,18 @@ from pytest_localserver.http import WSGIServer
 from selenium import webdriver
 from selenium.webdriver.edge.service import Service
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium.webdriver.edge.options import Options
 
 from ksp_price_notifier import KSP
 
 
 @pytest.fixture(scope="module")
 def provider():
-    driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
+    options = Options()
+    options.headless = True
+    driver = webdriver.Edge(
+        options=options, service=Service(EdgeChromiumDriverManager().install())
+    )
     return driver
 
 
