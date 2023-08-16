@@ -2,19 +2,16 @@
 name = "ksp-price-notifier"
 version = "0.1.6"
 description = ""
-authors = ["Jochman"]
+authors = ["Jochman <ilnest.bar@gmail.com>"]
 homepage = "https://github.com/jochman/KSP-Price-Notifier"
 repository = "https://github.com/jochman/KSP-Price-Notifier"
 license = "MIT"
-include = [
-    "LICENSE",
-    "CHANGELOG.md"
-]
+include = ["LICENSE", "CHANGELOG.md"]
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10"
+    "Programming Language :: Python :: 3.10",
 ]
 readme = "README.md"
 
@@ -24,11 +21,61 @@ ksp-price-notifier = 'ksp_price_notifier.__main__:app'
 [tool.poetry.dependencies]
 python = "^3.8"
 typer = "^0.4.0"
+selenium = "^4.11.2"
 
-[tool.poetry.dev-dependencies]
-requests-mock = "^1.9.3"
-pre-commit = "^2.17.0"
+
+[tool.poetry.group.dev.dependencies]
+webdriver-manager = "^4.0.0"
+pre-commit = "^3.3.0"
 pytest = "^7.1.1"
+pytest-localserver = "^0.8.0"
+ruff = "^0.0.284"
+
+[tool.ruff]
+# Enable the pycodestyle (`E`) and Pyflakes (`F`) rules by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = ["E", "F", "I"]
+ignore = []
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+per-file-ignores = {}
+
+# Same as Black.
+line-length = 88
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.8
+target-version = "py38"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
