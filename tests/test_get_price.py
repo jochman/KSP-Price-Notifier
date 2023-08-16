@@ -13,7 +13,7 @@ from ksp_price_notifier import KSP
 @pytest.fixture(scope="module")
 def provider():
     options = Options()
-    options.headless = True
+    options.add_argument("--headless=new")
     driver = webdriver.Edge(
         options=options, service=Service(EdgeChromiumDriverManager().install())
     )
