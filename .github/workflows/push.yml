@@ -27,7 +27,7 @@ jobs:
         uses: snok/install-poetry@v1
       - name: Load cached venv
         id: cached-poetry-dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
@@ -42,6 +42,10 @@ jobs:
       #----------------------------------------------
       - name: Install library
         run: poetry install --no-interaction
+      #----------------------------------------------
+      # install browser for testing
+      #----------------------------------------------
+      - uses: browser-actions/setup-edge@v1
       #----------------------------------------------
       #              run test suite
       #----------------------------------------------
