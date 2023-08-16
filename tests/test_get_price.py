@@ -3,9 +3,9 @@ from pathlib import Path
 import pytest
 from pytest_localserver.http import WSGIServer
 from selenium import webdriver
+from selenium.webdriver.edge.options import Options
 from selenium.webdriver.edge.service import Service
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
-from selenium.webdriver.edge.options import Options
 
 from ksp_price_notifier import KSP
 
